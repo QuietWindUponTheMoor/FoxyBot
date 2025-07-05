@@ -1,0 +1,12 @@
+{
+ "commands": [
+    {
+        "name": "foxxo",
+        "description": "Get a random picture & trivia of a cute fox!"
+    },
+    {
+        "name": "notfoxxo",
+        "description": "Get a random picture & trivia of a cute... not a fox!"
+    }
+ ]
+}
