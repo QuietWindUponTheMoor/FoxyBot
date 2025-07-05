@@ -27,7 +27,8 @@ function default_1(interaction, mongo) {
         let funFactCounter = counterResult.counter;
         yield interaction.reply({
             content: `Random, fun fox fact #${funFactCounter}: ${fact}`,
-            files: [imageFile]
+            files: [imageFile],
+            //flags: MessageFlags.Ephemeral
         });
         // Close mongo connection
         yield mongo.client.close();

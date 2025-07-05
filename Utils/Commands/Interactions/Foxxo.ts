@@ -1,4 +1,4 @@
-import { ChatInputCommandInteraction, AttachmentBuilder } from "discord.js";
+import { ChatInputCommandInteraction, AttachmentBuilder, MessageFlags } from "discord.js";
 import { WildMongo } from "../../Mongo";
 
 // Local import
@@ -19,7 +19,8 @@ export default async function (interaction: ChatInputCommandInteraction, mongo: 
 
     await interaction.reply({
         content: `Random, fun fox fact #${funFactCounter}: ${fact}`,
-        files: [imageFile]
+        files: [imageFile],
+        //flags: MessageFlags.Ephemeral
     });
 
     // Close mongo connection
