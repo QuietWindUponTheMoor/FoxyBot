@@ -13,10 +13,10 @@
     "discord.js": "^14.21.0",
     "dotenv": "^17.0.1",
     "fs": "^0.0.1-security",
-    "mongodb": "^6.17.0",
     "node-cron": "^4.2.0",
     "nodemon": "^3.1.10",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "wildmongowhispers": "^1.0.0"
   },
   "devDependencies": {
     "@types/node-cron": "^3.0.11"

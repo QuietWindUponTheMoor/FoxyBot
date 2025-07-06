@@ -1,4 +1,4 @@
-import { WildMongo } from "./Mongo";
+import { WildMongo } from "wildmongowhispers";
 
 export async function AnimalFetchRandom(mongo: WildMongo, animalType: string) {
     await mongo.client.connect();

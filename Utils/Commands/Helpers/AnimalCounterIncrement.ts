@@ -1,4 +1,4 @@
-import { WildMongo } from "./Mongo";
+import { WildMongo } from "wildmongowhispers";
 
 export async function AnimalCounterIncrement(mongo: WildMongo, animalType: string) {
     let result = await mongo.findOneAndUpdate(`foxybot-factcounter`, { animalType }, {

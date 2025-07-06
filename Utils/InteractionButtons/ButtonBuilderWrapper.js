@@ -9,13 +9,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = default_1;
-// Local import
-const NotFoxxoExecute_1 = require("../Helpers/NotFoxxoExecute");
-function default_1(interaction, mongo) {
+exports.ButtonBuilderWrapper = ButtonBuilderWrapper;
+const discord_js_1 = require("discord.js");
+function ButtonBuilderWrapper(buttons) {
     return __awaiter(this, void 0, void 0, function* () {
-        if (interaction.commandName !== "notfoxxo")
-            return;
-        yield (0, NotFoxxoExecute_1.NotFoxxoExecute)(mongo, interaction);
+        // Create the buttons
+        let buttonComponents = buttons.map(btn => new discord_js_1.ButtonBuilder()
+            .setCustomId(btn.customID)
+            .setLabel(btn.label)
+            .setStyle(btn.style));
+        return new discord_js_1.ActionRowBuilder().addComponents(...buttonComponents);
     });
 }

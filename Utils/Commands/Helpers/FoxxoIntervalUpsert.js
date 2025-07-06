@@ -9,13 +9,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = default_1;
-// Local import
-const NotFoxxoExecute_1 = require("../Helpers/NotFoxxoExecute");
-function default_1(interaction, mongo) {
-    return __awaiter(this, void 0, void 0, function* () {
-        if (interaction.commandName !== "notfoxxo")
-            return;
-        yield (0, NotFoxxoExecute_1.NotFoxxoExecute)(mongo, interaction);
+exports.FoxxoIntervalUpsert = FoxxoIntervalUpsert;
+function FoxxoIntervalUpsert(mongo_1, options_1) {
+    return __awaiter(this, arguments, void 0, function* (mongo, options, foxxoOrNotFoxxo = "foxxo") {
+        let { interval, guildID, channelID } = options;
+        return yield mongo.updateOne(`foxybot-${foxxoOrNotFoxxo}-intervals`, { guildID: guildID, channelID: channelID }, {
+            $setOnInsert: {
+                interval: interval,
+                guildID: guildID,
+                channelID: channelID
+            }
+        }, true);
     });
 }

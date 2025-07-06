@@ -1,4 +1,5 @@
-import { WildMongo } from "../Mongo";
+import { WildMongo } from "wildmongowhispers";
+
 import { Animals, GetRandomAnimal } from "../../Enums/Animals";
 
 export async function Scraper(mongo: WildMongo) {
@@ -6,7 +7,8 @@ export async function Scraper(mongo: WildMongo) {
     let animal = GetRandomAnimal();
 
     // Run API calls to scraped endpoint
-    for (let i = 0; i < 100; i++) {
+    let numberCallsPerSchedule = 100;
+    for (let i = 0; i < numberCallsPerSchedule; i++) {
         try {
             let result = await fetch(`https://some-random-api.com/animal/${animal}`);
         
@@ -27,7 +29,7 @@ export async function Scraper(mongo: WildMongo) {
             let delayTimeInSeconds = 5;
             await new Promise((result) => setTimeout(result, delayTimeInSeconds * 1000));
         } catch (error) {
-            console.error("There was an error. Is there an internet connection? Is the endpoint offline?");
+            console.error("There was an error running scraper function. Is there an internet connection? Is the endpoint offline?", error);
             continue;
         }
     }

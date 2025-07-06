@@ -2,7 +2,7 @@ import { ChatInputCommandInteraction, Client, Events, REST, Routes} from "discor
 import { pathToFileURL } from "url";
 import fs from "fs";
 import path from "path";
-import { WildMongo } from "../Mongo";
+import { WildMongo } from "wildmongowhispers";
 
 export class Commands {
     client: Client;

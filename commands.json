@@ -7,6 +7,32 @@
     {
         "name": "notfoxxo",
         "description": "Get a random picture & trivia of a cute... not a fox!"
+    },
+    {
+        "name": "foxxo-on-a-timer",
+        "description": "Runs the /foxxo command on an interval.",
+        "options": [
+            {
+                "type": 7,
+                "name": "channel",
+                "description": "(OPTIONAL) Uses the current channel if not specified.",
+                "required": false
+            }
+        ],
+        "default_member_permissions": 32
+    },
+    {
+        "name": "notfoxxo-on-a-timer",
+        "description": "Runs the /notfoxxo command on an interval.",
+        "options": [
+            {
+                "type": 7,
+                "name": "channel",
+                "description": "Uses the current channel if not specified.",
+                "required": false
+            }
+        ],
+        "default_member_permissions": 32
     }
  ]
 }

@@ -10,27 +10,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = default_1;
-const discord_js_1 = require("discord.js");
 // Local import
-const AnimalCounterIncrement_1 = require("../../AnimalCounterIncrement");
-const AnimalFetchRandom_1 = require("../../AnimalFetchRandom");
+const FoxxoExecute_1 = require("../Helpers/FoxxoExecute");
 function default_1(interaction, mongo) {
     return __awaiter(this, void 0, void 0, function* () {
         if (interaction.commandName !== "foxxo")
             return;
-        // Fetch random fox image
-        yield mongo.client.connect();
-        let [image, fact] = yield (0, AnimalFetchRandom_1.AnimalFetchRandom)(mongo, "fox");
-        let imageFile = new discord_js_1.AttachmentBuilder(image);
-        // Increment fox fact
-        let counterResult = yield (0, AnimalCounterIncrement_1.AnimalCounterIncrement)(mongo, "fox");
-        let funFactCounter = counterResult.counter;
-        yield interaction.reply({
-            content: `Random, fun fox fact #${funFactCounter}: ${fact}`,
-            files: [imageFile],
-            //flags: MessageFlags.Ephemeral
-        });
-        // Close mongo connection
-        yield mongo.client.close();
+        yield (0, FoxxoExecute_1.FoxxoExecute)(mongo, interaction);
     });
 }

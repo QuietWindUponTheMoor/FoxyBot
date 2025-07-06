@@ -1,17 +1,19 @@
-import { Client, Events, GatewayIntentBits } from "discord.js";
+import { ButtonInteraction, Client, Events, GatewayIntentBits } from "discord.js";
 import dotenv from "dotenv";
-import { WildMongo } from "./Utils/Mongo";
 import cron from "node-cron";
+import { WildMongo } from "wildmongowhispers";
 
 // Local imports
 import { Commands } from "./Utils/Commands/Register";
 import { Scraper } from "./Utils/Cron/Scraper";
+import { AnimalsOnATimer } from "./Utils/Cron/AnimalsOnATimer";
+import { FoxxoOnATimerButtonHandler } from "./Utils/Commands/Interactions/ButtonReplies/FoxxoOnATimerButtonHandler";
 
 // Configure dotenv
 dotenv.config();
 
 // Configure mongo
-let mongo = new WildMongo("FoxyBot");
+let mongo = new WildMongo("FoxyBot", process.env.mongoURI);
 
 // Create client
 let client = new Client({
@@ -25,7 +27,7 @@ let commands = new Commands(client, mongo);
 commands.Register();
 commands.InteractionsHandler();
 
-client.on(Events.ClientReady, readyClient => {
+client.on(Events.ClientReady, async readyClient => {
     // Start scraper cron job
     Scraper(mongo); // Do once on startup
     cron.schedule("0 */2 * * *", () => {
@@ -33,8 +35,27 @@ client.on(Events.ClientReady, readyClient => {
         Scraper(mongo);
     });
 
+    // Start animals on a timer cron job
+    AnimalsOnATimer(client, mongo, cron);
+
     // Log ready status
     console.log(`Logged in as ${readyClient.user.tag}!`);
+});
+
+client.on("interactionCreate", async (interaction: ButtonInteraction) => {
+    // FoxxoOnATimerButtonHandler
+    await FoxxoOnATimerButtonHandler(mongo, interaction);
+});
+
+process.on("SIGINT", async () => {
+    // Shut down server
+    console.warn(`[${new Date().toISOString()}] Shutting down server...`);
+
+    // Close mongo pool connection
+    await mongo.ClosePoolConnection();
+
+    // Finally exit
+    process.exit(0);
 });
 
 client.on("error", error => {
@@ -44,7 +65,5 @@ client.on("error", error => {
 (client.ws as any).on("error", error => {
     console.error(`[${new Date().toISOString()}] [Discord Gateway Error]`, error);
 });
-
-
 
 client.login(process.env.FOXYBOT);
