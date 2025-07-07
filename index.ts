@@ -47,6 +47,14 @@ client.on("interactionCreate", async (interaction: ButtonInteraction) => {
     await FoxxoOnATimerButtonHandler(mongo, interaction);
 });
 
+client.on("guildDelete", async guild => {
+    console.warn(`[${new Date().toISOString()}] [Guild Removed] ${guild.id} | ${guild.name}`);
+
+    // Delete intervals
+    await mongo.database.collection("foxybot-foxxo-intervals").deleteMany({ guildID: guild.id });
+    await mongo.database.collection("foxybot-notfoxxo-intervals").deleteMany({ guildID: guild.id });
+});
+
 process.on("SIGINT", async () => {
     // Shut down server
     console.warn(`[${new Date().toISOString()}] Shutting down server...`);

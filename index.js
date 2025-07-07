@@ -51,6 +51,12 @@ client.on("interactionCreate", (interaction) => __awaiter(void 0, void 0, void 0
     // FoxxoOnATimerButtonHandler
     yield (0, FoxxoOnATimerButtonHandler_1.FoxxoOnATimerButtonHandler)(mongo, interaction);
 }));
+client.on("guildDelete", (guild) => __awaiter(void 0, void 0, void 0, function* () {
+    console.warn(`[${new Date().toISOString()}] [Guild Removed] ${guild.id} | ${guild.name}`);
+    // Delete intervals
+    yield mongo.database.collection("foxybot-foxxo-intervals").deleteMany({ guildID: guild.id });
+    yield mongo.database.collection("foxybot-notfoxxo-intervals").deleteMany({ guildID: guild.id });
+}));
 process.on("SIGINT", () => __awaiter(void 0, void 0, void 0, function* () {
     // Shut down server
     console.warn(`[${new Date().toISOString()}] Shutting down server...`);
