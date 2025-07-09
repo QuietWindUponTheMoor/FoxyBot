@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Scraper = Scraper;
 const Animals_1 = require("../../Enums/Animals");
+const AnimalTypes_1 = require("../../Enums/AnimalTypes");
 function Scraper(mongo) {
     return __awaiter(this, void 0, void 0, function* () {
         // Select random animal
@@ -25,8 +26,10 @@ function Scraper(mongo) {
                 let image = data.image;
                 let fact = data.fact;
                 // Insert into database
-                yield mongo.updateOne(`foxybot-${animal}`, { image, fact }, {
+                yield mongo.updateOne(`queue`, { image, fact }, {
                     $setOnInsert: {
+                        type: AnimalTypes_1.AnimalTypes.NotFurry,
+                        animal: animal,
                         image: image,
                         fact: fact
                     }
@@ -42,3 +45,4 @@ function Scraper(mongo) {
         }
     });
 }
+//# sourceMappingURL=Scraper.js.map

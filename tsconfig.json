@@ -8,11 +8,12 @@
     "strict": false,
     "skipLibCheck": true,
     "outDir": "./",
-    "rootDir": "./"
+    "rootDir": "./",
+    "sourceMap": true
   },
   "include": [
     "./**/*.ts",
     "globals.d.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "scripts"]
 }

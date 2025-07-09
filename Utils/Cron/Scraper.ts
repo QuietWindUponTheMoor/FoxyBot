@@ -1,6 +1,7 @@
 import { WildMongo } from "wildmongowhispers";
 
-import { Animals, GetRandomAnimal } from "../../Enums/Animals";
+import { GetRandomAnimal } from "../../Enums/Animals";
+import { AnimalTypes } from "../../Enums/AnimalTypes";
 
 export async function Scraper(mongo: WildMongo) {
     // Select random animal
@@ -18,8 +19,10 @@ export async function Scraper(mongo: WildMongo) {
             let fact = data.fact;
 
             // Insert into database
-            await mongo.updateOne(`foxybot-${animal}`, { image, fact }, {
+            await mongo.updateOne(`queue`, { image, fact }, {
                 $setOnInsert: {
+                    type: AnimalTypes.NotFurry,
+                    animal: animal,
                     image: image,
                     fact: fact
                 }

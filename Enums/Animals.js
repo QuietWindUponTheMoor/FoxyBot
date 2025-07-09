@@ -21,3 +21,4 @@ function GetRandomAnimal() {
     let randIndex = values[Math.floor(Math.random() * values.length)];
     return Animals[randIndex];
 }
+//# sourceMappingURL=Animals.js.map

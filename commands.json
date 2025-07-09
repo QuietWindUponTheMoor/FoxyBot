@@ -33,6 +33,14 @@
             }
         ],
         "default_member_permissions": 32
+    },
+    {
+        "name": "mod-content-sfw",
+        "description": "[OFFICIAL MODERATORS ONLY] - Start a SFW content moderation session"
+    },
+    {
+        "name": "mod-content-nsfw",
+        "description": "[OFFICIAL MODERATORS ONLY] - Start a NSFW content moderation session"
     }
  ]
 }
