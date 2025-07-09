@@ -1,4 +1,4 @@
-import "source-map-support/Register";
+import "source-map-support/register";
 import { ButtonInteraction, Client, Events, GatewayIntentBits } from "discord.js";
 import dotenv from "dotenv";
 import cron from "node-cron";
