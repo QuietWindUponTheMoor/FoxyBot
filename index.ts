@@ -1,18 +1,20 @@
+import "source-map-support/Register";
 import { ButtonInteraction, Client, Events, GatewayIntentBits } from "discord.js";
 import dotenv from "dotenv";
 import cron from "node-cron";
 import { WildMongo } from "wildmongowhispers";
 
 // Local imports
-import { Commands } from "./Utils/Commands/Register";
+import { Commands } from "./Discord/Commands/Register";
 import { Scraper } from "./Utils/Cron/Scraper";
 import { AnimalsOnATimer } from "./Utils/Cron/AnimalsOnATimer";
-import { FoxxoOnATimerButtonHandler } from "./Utils/Commands/Interactions/ButtonReplies/FoxxoOnATimerButtonHandler";
+import { FoxxoOnATimerButtonHandler } from "./Discord/Commands/Interactions/ButtonReplies/FoxxoOnATimerButtonHandler";
+import { CreateMongoIndexes } from "./Utils/CreateMongoIndexes";
 
 // Configure dotenv
 dotenv.config();
 
-// Configure mongo
+// Configure mongo & redis
 let mongo = new WildMongo("FoxyBot", process.env.mongoURI);
 
 // Create client
@@ -28,6 +30,9 @@ commands.Register();
 commands.InteractionsHandler();
 
 client.on(Events.ClientReady, async readyClient => {
+    // Create mongo indexes (do this first to avoid timing conflicts)
+    await CreateMongoIndexes(mongo);
+
     // Start scraper cron job
     Scraper(mongo); // Do once on startup
     cron.schedule("0 */2 * * *", () => {
@@ -51,8 +56,7 @@ client.on("guildDelete", async guild => {
     console.warn(`[${new Date().toISOString()}] [Guild Removed] ${guild.id} | ${guild.name}`);
 
     // Delete intervals
-    await mongo.database.collection("foxybot-foxxo-intervals").deleteMany({ guildID: guild.id });
-    await mongo.database.collection("foxybot-notfoxxo-intervals").deleteMany({ guildID: guild.id });
+    await mongo.database.collection("animal-intervals").deleteMany({ guildID: guild.id });
 });
 
 process.on("SIGINT", async () => {

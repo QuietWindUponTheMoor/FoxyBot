@@ -10,10 +10,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AnimalsOnATimer = AnimalsOnATimer;
-const FoxxoExecute_1 = require("../Commands/Helpers/FoxxoExecute");
-const NotFoxxoExecute_1 = require("../Commands/Helpers/NotFoxxoExecute");
+const FoxxoExecute_1 = require("../../Discord/Commands/Helpers/FoxxoExecute");
+const NotFoxxoExecute_1 = require("../../Discord/Commands/Helpers/NotFoxxoExecute");
+const FoxxoOrNotFoxxo_1 = require("../../Enums/FoxxoOrNotFoxxo");
+const AnimalTypes_1 = require("../../Enums/AnimalTypes");
 function AnimalsOnATimer(client, mongo, cron) {
     return __awaiter(this, void 0, void 0, function* () {
+        // Interval cache
         let foxxoIntervals = {
             1: [],
             5: [],
@@ -32,16 +35,9 @@ function AnimalsOnATimer(client, mongo, cron) {
             25: [],
             30: [],
         };
-        for (let key in foxxoIntervals) {
-            let interval = parseInt(key);
-            let findInterval = (interval * 60 * 1000);
-            foxxoIntervals[key] = yield mongo.find("foxybot-foxxo-intervals", { interval: findInterval });
-        }
-        for (let key in notfoxxoIntervals) {
-            let interval = parseInt(key);
-            let findInterval = (interval * 60 * 1000);
-            notfoxxoIntervals[key] = yield mongo.find("foxybot-notfoxxo-intervals", { interval: findInterval });
-        }
+        // Populate interval cache
+        yield refreshIntervalCache();
+        cron.schedule(`*/30 * * * *`, () => __awaiter(this, void 0, void 0, function* () { yield refreshIntervalCache(); })); // Refresh cache every 30 minutes
         // Iterate over them again, but this time, schedule the cron jobs
         for (let key in foxxoIntervals) {
             console.log(`[${new Date().toISOString()}] Scheduling foxxo timers on interval ${key}`);
@@ -85,5 +81,21 @@ function AnimalsOnATimer(client, mongo, cron) {
                 }
             }));
         }
+        // Cache refresh helper, kept in same scope as updater function
+        function refreshIntervalCache() {
+            return __awaiter(this, void 0, void 0, function* () {
+                for (let key in foxxoIntervals) {
+                    let interval = parseInt(key);
+                    let findInterval = (interval * 60 * 1000);
+                    foxxoIntervals[key] = yield mongo.find("animal-intervals", { interval: findInterval, foxxoOrNotFoxxo: FoxxoOrNotFoxxo_1.FoxxoOrNotFoxxo.Foxxo, animalType: AnimalTypes_1.AnimalTypes.NotFurry });
+                }
+                for (let key in notfoxxoIntervals) {
+                    let interval = parseInt(key);
+                    let findInterval = (interval * 60 * 1000);
+                    notfoxxoIntervals[key] = yield mongo.find("animal-intervals", { interval: findInterval, foxxoOrNotFoxxo: FoxxoOrNotFoxxo_1.FoxxoOrNotFoxxo.NotFoxxo, animalType: AnimalTypes_1.AnimalTypes.NotFurry });
+                }
+            });
+        }
     });
 }
+//# sourceMappingURL=AnimalsOnATimer.js.map
