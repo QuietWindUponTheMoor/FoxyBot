@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r tsconfig-paths/register index.js",
     "refactor-mongo": "ts-node scripts/RefactorMongo.ts"
   },
   "keywords": [],
@@ -18,6 +19,7 @@
     "nodemon": "^3.1.10",
     "redist": "^0.2.0",
     "source-map-support": "^0.5.21",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.8.3",
     "wildmongowhispers": "^1.0.0"
   },
