@@ -7,13 +7,13 @@
     "forceConsistentCasingInFileNames": true,
     "strict": false,
     "skipLibCheck": true,
-    "outDir": "./",
-    "rootDir": "./",
-    "sourceMap": true
+    "outDir": "dist",
+    "sourceMap": true,
+    "baseUrl": "src"
   },
   "include": [
-    "./**/*.ts",
-    "globals.d.ts"
+    "src/index.ts",
+    "./**/*.ts"
   ],
   "exclude": ["node_modules", "scripts"]
 }
