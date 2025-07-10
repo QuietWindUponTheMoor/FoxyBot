@@ -11,8 +11,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ContentQueueSFW = ContentQueueSFW;
 const discord_js_1 = require("discord.js");
-const AnimalTypes_1 = require("Enums/AnimalTypes");
-const NextQueueItem_1 = require("Discord/Collectors/Helpers/NextQueueItem");
+const AnimalTypes_1 = require("../../../Enums/AnimalTypes");
+const NextQueueItem_1 = require("../../../Discord/Collectors/Helpers/NextQueueItem");
 function ContentQueueSFW(interaction, mongo) {
     return __awaiter(this, void 0, void 0, function* () {
         if (interaction.commandName !== "mod-content-sfw")

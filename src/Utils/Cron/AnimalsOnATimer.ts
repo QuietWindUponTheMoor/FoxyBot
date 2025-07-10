@@ -2,10 +2,10 @@ import { NodeCron } from "node-cron";
 import { WildMongo } from "wildmongowhispers";
 import { Client, GuildTextBasedChannel } from "discord.js";
 
-import { FoxxoExecute } from "Discord/Commands/Helpers/FoxxoExecute";
-import { NotFoxxoExecute } from "Discord/Commands/Helpers/NotFoxxoExecute";
-import { FoxxoOrNotFoxxo } from "Enums/FoxxoOrNotFoxxo";
-import { AnimalTypes } from "Enums/AnimalTypes";
+import { FoxxoExecute } from "../../Discord/Commands/Helpers/FoxxoExecute";
+import { NotFoxxoExecute } from "../../Discord/Commands/Helpers/NotFoxxoExecute";
+import { FoxxoOrNotFoxxo } from "../../Enums/FoxxoOrNotFoxxo";
+import { AnimalTypes } from "../../Enums/AnimalTypes";
 
 export async function AnimalsOnATimer(client: Client, mongo: WildMongo, cron: NodeCron) {
     // Interval cache

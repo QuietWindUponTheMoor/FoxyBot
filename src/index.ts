@@ -5,11 +5,11 @@ import cron from "node-cron";
 import { WildMongo } from "wildmongowhispers";
 
 // Local imports
-import { Commands } from "Discord/Commands/Register";
-import { Scraper } from "Utils/Cron/Scraper";
-import { AnimalsOnATimer } from "Utils/Cron/AnimalsOnATimer";
-import { FoxxoOnATimerButtonHandler } from "Discord/Commands/Interactions/ButtonReplies/FoxxoOnATimerButtonHandler";
-import { CreateMongoIndexes } from "Utils/CreateMongoIndexes";
+import { Commands } from "./Discord/Commands/Register";
+import { Scraper } from "./Utils/Cron/Scraper";
+import { AnimalsOnATimer } from "./Utils/Cron/AnimalsOnATimer";
+import { FoxxoOnATimerButtonHandler } from "./Discord/Commands/Interactions/ButtonReplies/FoxxoOnATimerButtonHandler";
+import { CreateMongoIndexes } from "./Utils/CreateMongoIndexes";
 
 // Configure dotenv
 dotenv.config();

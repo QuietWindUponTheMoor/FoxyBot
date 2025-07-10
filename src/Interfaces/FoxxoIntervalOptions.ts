@@ -1,5 +1,5 @@
-import { AnimalTypes } from "Enums/AnimalTypes";
-import { FoxxoOrNotFoxxo } from "Enums/FoxxoOrNotFoxxo";
+import { AnimalTypes } from "../Enums/AnimalTypes";
+import { FoxxoOrNotFoxxo } from "../Enums/FoxxoOrNotFoxxo";
 
 export interface FoxxoIntervalOptions {
     interval: number;

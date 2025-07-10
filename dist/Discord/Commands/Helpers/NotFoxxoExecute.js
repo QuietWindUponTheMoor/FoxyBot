@@ -12,9 +12,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.NotFoxxoExecute = NotFoxxoExecute;
 const discord_js_1 = require("discord.js");
 // Local import
-const AnimalCounterIncrement_1 = require("Discord/Commands/Helpers/AnimalCounterIncrement");
-const AnimalFetchRandom_1 = require("Discord/Commands/Helpers/AnimalFetchRandom");
-const AnimalTypes_1 = require("Enums/AnimalTypes");
+const AnimalCounterIncrement_1 = require("../../../Discord/Commands/Helpers/AnimalCounterIncrement");
+const AnimalFetchRandom_1 = require("../../../Discord/Commands/Helpers/AnimalFetchRandom");
+const AnimalTypes_1 = require("../../../Enums/AnimalTypes");
 function NotFoxxoExecute(mongo, recipient) {
     return __awaiter(this, void 0, void 0, function* () {
         let foxxoOrNotFoxxo = "notfoxxo";

@@ -1,5 +1,5 @@
 import { ActionRowBuilder, ButtonBuilder } from 'discord.js';
-import { ButtonBuilderOptions } from 'Interfaces/ButtonBuilderOptions';
+import { ButtonBuilderOptions } from '../../Interfaces/ButtonBuilderOptions';
 
 /**
  * 

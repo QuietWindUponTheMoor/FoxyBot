@@ -1,8 +1,8 @@
 import { ButtonInteraction, ButtonStyle, ChatInputCommandInteraction, Message, MessageFlags, AttachmentBuilder } from "discord.js";
 import { WildMongo } from "wildmongowhispers";
 
-import { FetchQueueItem } from "Discord/Collectors/Helpers/FetchQueueItem";
-import { ButtonBuilderWrapper } from "Discord/InteractionButtons/ButtonBuilderWrapper";
+import { FetchQueueItem } from "../../../Discord/Collectors/Helpers/FetchQueueItem";
+import { ButtonBuilderWrapper } from "../../../Discord/InteractionButtons/ButtonBuilderWrapper";
 
 /**
  * 

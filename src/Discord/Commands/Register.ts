@@ -4,8 +4,8 @@ import fs from "fs";
 import path from "path";
 
 import { WildMongo } from "wildmongowhispers";
-import { ContentQueueSFW } from "Discord/Collectors/ContentQueues/ContentQueueSFW";
-import { ContentQueueNSFW } from "Discord/Collectors/ContentQueues/ContentQueueNSFW";
+import { ContentQueueSFW } from "../../Discord/Collectors/ContentQueues/ContentQueueSFW";
+import { ContentQueueNSFW } from "../../Discord/Collectors/ContentQueues/ContentQueueNSFW";
 
 export class Commands {
     client: Client;

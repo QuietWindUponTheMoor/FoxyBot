@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node -r tsconfig-paths/register index.js",
+    "nodemon-start": "nodemon --exec \"node -r tsconfig-paths/register dist/index.js\"",
+    "start": "node -r tsconfig-paths/register dist/index.js",
     "refactor-mongo": "ts-node scripts/RefactorMongo.ts"
   },
   "keywords": [],

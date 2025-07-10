@@ -1,9 +1,9 @@
 import { ButtonInteraction, MessageFlags } from "discord.js";
 import { WildMongo } from "wildmongowhispers";
 
-import { IntervalUpsert } from "Discord/Commands/Helpers/IntervalUpsert";
-import { AnimalTypes } from "Enums/AnimalTypes";
-import { FoxxoOrNotFoxxo } from "Enums/FoxxoOrNotFoxxo";
+import { IntervalUpsert } from "../../../../Discord/Commands/Helpers/IntervalUpsert";
+import { AnimalTypes } from "../../../../Enums/AnimalTypes";
+import { FoxxoOrNotFoxxo } from "../../../../Enums/FoxxoOrNotFoxxo";
 
 export async function FoxxoOnATimerButtonHandler(mongo: WildMongo, interaction: ButtonInteraction) {
     if (!interaction.isButton()) return;

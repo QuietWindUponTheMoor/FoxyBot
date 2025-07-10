@@ -8,8 +8,7 @@
     "strict": false,
     "skipLibCheck": true,
     "outDir": "dist",
-    "sourceMap": true,
-    "baseUrl": "src"
+    "sourceMap": true
   },
   "include": [
     "src/index.ts",

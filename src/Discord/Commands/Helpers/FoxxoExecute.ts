@@ -2,9 +2,9 @@ import { ChatInputCommandInteraction, AttachmentBuilder, MessageFlags, GuildText
 import { WildMongo } from "wildmongowhispers";
 
 // Local import
-import { AnimalCounterIncrement } from "Discord/Commands/Helpers/AnimalCounterIncrement";
-import { AnimalFetchRandom, AnimalFetchRandomReturn } from "Discord/Commands/Helpers/AnimalFetchRandom";
-import { AnimalTypes } from "Enums/AnimalTypes";
+import { AnimalCounterIncrement } from "../../../Discord/Commands/Helpers/AnimalCounterIncrement";
+import { AnimalFetchRandom, AnimalFetchRandomReturn } from "../../../Discord/Commands/Helpers/AnimalFetchRandom";
+import { AnimalTypes } from "../../../Enums/AnimalTypes";
 
 export async function FoxxoExecute(mongo: WildMongo, recipient: ChatInputCommandInteraction | GuildTextBasedChannel) {
     let foxxoOrNotFoxxo = "foxxo";

@@ -9,8 +9,8 @@ import {
 import { WildMongo } from "wildmongowhispers";
 
 // Local import
-import { ButtonBuilderWrapper } from "Discord/InteractionButtons/ButtonBuilderWrapper";
-import { FoxxoOrNotFoxxo } from "Enums/FoxxoOrNotFoxxo";
+import { ButtonBuilderWrapper } from "../../../Discord/InteractionButtons/ButtonBuilderWrapper";
+import { FoxxoOrNotFoxxo } from "../../../Enums/FoxxoOrNotFoxxo";
 
 export default async function (interaction: ChatInputCommandInteraction, mongo: WildMongo) {
     if (interaction.commandName !== "foxxo-on-a-timer") return;

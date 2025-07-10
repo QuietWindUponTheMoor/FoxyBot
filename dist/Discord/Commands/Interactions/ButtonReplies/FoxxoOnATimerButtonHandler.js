@@ -10,9 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FoxxoOnATimerButtonHandler = FoxxoOnATimerButtonHandler;
-const IntervalUpsert_1 = require("Discord/Commands/Helpers/IntervalUpsert");
-const AnimalTypes_1 = require("Enums/AnimalTypes");
-const FoxxoOrNotFoxxo_1 = require("Enums/FoxxoOrNotFoxxo");
+const IntervalUpsert_1 = require("../../../../Discord/Commands/Helpers/IntervalUpsert");
+const AnimalTypes_1 = require("../../../../Enums/AnimalTypes");
+const FoxxoOrNotFoxxo_1 = require("../../../../Enums/FoxxoOrNotFoxxo");
 function FoxxoOnATimerButtonHandler(mongo, interaction) {
     return __awaiter(this, void 0, void 0, function* () {
         if (!interaction.isButton())

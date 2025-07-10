@@ -18,11 +18,11 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const node_cron_1 = __importDefault(require("node-cron"));
 const wildmongowhispers_1 = require("wildmongowhispers");
 // Local imports
-const Register_1 = require("Discord/Commands/Register");
-const Scraper_1 = require("Utils/Cron/Scraper");
-const AnimalsOnATimer_1 = require("Utils/Cron/AnimalsOnATimer");
-const FoxxoOnATimerButtonHandler_1 = require("Discord/Commands/Interactions/ButtonReplies/FoxxoOnATimerButtonHandler");
-const CreateMongoIndexes_1 = require("Utils/CreateMongoIndexes");
+const Register_1 = require("./Discord/Commands/Register");
+const Scraper_1 = require("./Utils/Cron/Scraper");
+const AnimalsOnATimer_1 = require("./Utils/Cron/AnimalsOnATimer");
+const FoxxoOnATimerButtonHandler_1 = require("./Discord/Commands/Interactions/ButtonReplies/FoxxoOnATimerButtonHandler");
+const CreateMongoIndexes_1 = require("./Utils/CreateMongoIndexes");
 // Configure dotenv
 dotenv_1.default.config();
 // Configure mongo & redis

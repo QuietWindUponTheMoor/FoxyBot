@@ -1,7 +1,7 @@
 import { WildMongo } from "wildmongowhispers";
 
-import { GetRandomAnimal } from "Enums/Animals";
-import { AnimalTypes } from "Enums/AnimalTypes";
+import { GetRandomAnimal } from "../../Enums/Animals";
+import { AnimalTypes } from "../../Enums/AnimalTypes";
 
 export async function Scraper(mongo: WildMongo) {
     // Select random animal

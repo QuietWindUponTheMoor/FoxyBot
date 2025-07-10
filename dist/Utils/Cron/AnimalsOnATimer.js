@@ -10,10 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AnimalsOnATimer = AnimalsOnATimer;
-const FoxxoExecute_1 = require("Discord/Commands/Helpers/FoxxoExecute");
-const NotFoxxoExecute_1 = require("Discord/Commands/Helpers/NotFoxxoExecute");
-const FoxxoOrNotFoxxo_1 = require("Enums/FoxxoOrNotFoxxo");
-const AnimalTypes_1 = require("Enums/AnimalTypes");
+const FoxxoExecute_1 = require("../../Discord/Commands/Helpers/FoxxoExecute");
+const NotFoxxoExecute_1 = require("../../Discord/Commands/Helpers/NotFoxxoExecute");
+const FoxxoOrNotFoxxo_1 = require("../../Enums/FoxxoOrNotFoxxo");
+const AnimalTypes_1 = require("../../Enums/AnimalTypes");
 function AnimalsOnATimer(client, mongo, cron) {
     return __awaiter(this, void 0, void 0, function* () {
         // Interval cache

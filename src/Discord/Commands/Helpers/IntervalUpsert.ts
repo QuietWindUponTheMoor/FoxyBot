@@ -1,6 +1,6 @@
 import { WildMongo } from "wildmongowhispers";
 
-import { FoxxoIntervalOptions } from "Interfaces/FoxxoIntervalOptions";
+import { FoxxoIntervalOptions } from "../../../Interfaces/FoxxoIntervalOptions";
 
 export async function IntervalUpsert(mongo: WildMongo, options: FoxxoIntervalOptions) {
     let { interval, guildID, channelID, animalType, foxxoOrNotFoxxo } = options;

@@ -17,8 +17,8 @@ const discord_js_1 = require("discord.js");
 const url_1 = require("url");
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
-const ContentQueueSFW_1 = require("Discord/Collectors/ContentQueues/ContentQueueSFW");
-const ContentQueueNSFW_1 = require("Discord/Collectors/ContentQueues/ContentQueueNSFW");
+const ContentQueueSFW_1 = require("../../Discord/Collectors/ContentQueues/ContentQueueSFW");
+const ContentQueueNSFW_1 = require("../../Discord/Collectors/ContentQueues/ContentQueueNSFW");
 class Commands {
     constructor(client, mongo) {
         this.client = client;

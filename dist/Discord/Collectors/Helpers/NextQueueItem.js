@@ -11,8 +11,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NextQueueItem = NextQueueItem;
 const discord_js_1 = require("discord.js");
-const FetchQueueItem_1 = require("Discord/Collectors/Helpers/FetchQueueItem");
-const ButtonBuilderWrapper_1 = require("Discord/InteractionButtons/ButtonBuilderWrapper");
+const FetchQueueItem_1 = require("../../../Discord/Collectors/Helpers/FetchQueueItem");
+const ButtonBuilderWrapper_1 = require("../../../Discord/InteractionButtons/ButtonBuilderWrapper");
 /**
  *
  * @param interaction The initial or button interaction

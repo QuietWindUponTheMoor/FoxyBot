@@ -1,8 +1,8 @@
 import { ChatInputCommandInteraction, ComponentType, GuildMember, Message, MessageFlags } from "discord.js";
 import { WildMongo } from "wildmongowhispers";
 
-import { AnimalTypes } from "Enums/AnimalTypes";
-import { NextQueueItem } from "Discord/Collectors/Helpers/NextQueueItem";
+import { AnimalTypes } from "../../../Enums/AnimalTypes";
+import { NextQueueItem } from "../../../Discord/Collectors/Helpers/NextQueueItem";
 
 export async function ContentQueueNSFW(interaction: ChatInputCommandInteraction, mongo: WildMongo) {
     if (interaction.commandName !== "mod-content-nsfw") return;

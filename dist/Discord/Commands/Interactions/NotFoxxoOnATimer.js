@@ -12,8 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = default_1;
 const discord_js_1 = require("discord.js");
 // Local import
-const ButtonBuilderWrapper_1 = require("Discord/InteractionButtons/ButtonBuilderWrapper");
-const FoxxoOrNotFoxxo_1 = require("Enums/FoxxoOrNotFoxxo");
+const ButtonBuilderWrapper_1 = require("../../../Discord/InteractionButtons/ButtonBuilderWrapper");
+const FoxxoOrNotFoxxo_1 = require("../../../Enums/FoxxoOrNotFoxxo");
 function default_1(interaction, mongo) {
     return __awaiter(this, void 0, void 0, function* () {
         if (interaction.commandName !== "notfoxxo-on-a-timer")

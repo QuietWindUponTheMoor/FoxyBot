@@ -10,8 +10,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Scraper = Scraper;
-const Animals_1 = require("Enums/Animals");
-const AnimalTypes_1 = require("Enums/AnimalTypes");
+const Animals_1 = require("../../Enums/Animals");
+const AnimalTypes_1 = require("../../Enums/AnimalTypes");
 function Scraper(mongo) {
     return __awaiter(this, void 0, void 0, function* () {
         // Select random animal

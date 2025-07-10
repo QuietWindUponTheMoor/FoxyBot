@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = default_1;
 // Local import
-const FoxxoExecute_1 = require("Discord/Commands/Helpers/FoxxoExecute");
+const FoxxoExecute_1 = require("../../../Discord/Commands/Helpers/FoxxoExecute");
 function default_1(interaction, mongo) {
     return __awaiter(this, void 0, void 0, function* () {
         if (interaction.commandName !== "foxxo")

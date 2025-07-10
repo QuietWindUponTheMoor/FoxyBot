@@ -1,5 +1,6 @@
 import { WildMongo } from "wildmongowhispers";
-import { AnimalTypes } from "Enums/AnimalTypes";
+
+import { AnimalTypes } from "../../../Enums/AnimalTypes";
 
 export interface AnimalFetchRandomResult {
     _id: any,
