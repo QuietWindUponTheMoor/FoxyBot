@@ -35,6 +35,16 @@
         "default_member_permissions": 32
     },
     {
+        "name": "clear-foxxo-on-a-timer",
+        "description": "Clears any foxxo timers for the current channel",
+        "default_member_permissions": 32
+    },
+    {
+        "name": "clear-notfoxxo-on-a-timer",
+        "description": "Clears any notfoxxo timers for the current channel",
+        "default_member_permissions": 32
+    },
+    {
         "name": "mod-content-sfw",
         "description": "[OFFICIAL MODERATORS ONLY] - Start a SFW content moderation session"
     },
